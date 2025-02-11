@@ -2,9 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./Pages/Home";
 import Admin from "./Pages/Admin";
 import Login from "./Pages/Login";
-import Template from "./Pages/Template";
+
 import Registration from "./Pages/Registration";
 import UserProfile from "./Pages/UserProfile";
+import Templates from "./Pages/Templates";
+import CreateTemplate from "./Pages/CreateTemplate";
 
 
 function App() {
@@ -16,7 +18,8 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/template" element={<Template />} />
+      <Route path="/templates" element={<Templates />} />
+      <Route path="/createtemp" element={<CreateTemplate />} />
       <Route path="/reg" element={<Registration/>} />
       <Route path="/profile" element={<UserProfile />} />
       </Routes>

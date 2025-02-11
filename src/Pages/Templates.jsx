@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Template() {
+function Templates() {
   return (
     <div>
+      all the templates
       
     </div>
   )
 }
 
-export default Template
+export default Templates
