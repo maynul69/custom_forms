@@ -8,7 +8,7 @@ import UserProfile from "./Pages/UserProfile";
 import Templates from "./Pages/Templates";
 import CreateTemplate from "./Pages/CreateTemplate";
 
-
+import './App.css';
 function App() {
   
 
