@@ -28,10 +28,16 @@ function Registration() {
       console.log(res.message);
       
     } catch (error) {
-      
+      if (error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message)
+      }
     }
   }
   const [errorMessage, setErrorMessage] = useState('');
+  const [error,setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
 
 
@@ -114,8 +120,9 @@ function Registration() {
               👁️
             </button>
           </div>
+          
         </div>
-
+          {error &&<div>{error}</div>}
         <div>
           <button
             type="submit"
