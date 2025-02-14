@@ -1,6 +1,34 @@
 import React from 'react'
+import { useState } from "react";
+import axios from "axios";
 
 function Login() {
+    const [data,setData]= useState({
+      email:"",
+      password:""
+    });
+    const handleChange=({ currentTarget:input })=>{
+      setData({...data, [input.name]:input.value})
+    }
+    const handleSubmit=async(e)=>{
+      e.preventDefault();
+      try {
+        const url="http://localhost:5000/api/auth";
+        const {data:res}= await axios.post(url, data);
+        localStorage.setItem("token",res.data);
+        window.location="/"        
+      } catch (error) {
+        if (error.response &&
+          error.response.status >= 400 &&
+          error.response.status <= 500
+        ) {
+          setError(error.response.data.message)
+        }
+      }
+    }
+    const [error,setError] = useState('');
+  
+
   return (
     <div>
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -18,9 +46,10 @@ function Login() {
             </label>
             <div className="mt-2">
               <input
-                id="email"
                 name="email"
                 type="email"
+                value={data.email}
+                onChange={handleChange}
                 required
                 autoComplete="email"
                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -34,9 +63,10 @@ function Login() {
             </label>
             <div className="mt-2">
               <input
-                id="password"
                 name="password"
                 type="password"
+                value={data.password}
+                onChange={handleChange}
                 required
                 autoComplete="current-password"
                 className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
@@ -52,7 +82,8 @@ function Login() {
               Sign in
             </button>
           </div>
-          
+          {error &&<div>{error}</div>}
+
           <div>
             <button
               type="button"
