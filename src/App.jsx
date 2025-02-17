@@ -9,6 +9,7 @@ import CreateTemplate from "./Pages/CreateTemplate";
 
 import './App.css';
 
+
 // Private Route Component
 const PrivateRoute = () => {
   const token = localStorage.getItem("token"); // Check if user is authenticated
@@ -18,6 +19,7 @@ const PrivateRoute = () => {
 function App() {
   return (
     <BrowserRouter>
+
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
@@ -28,7 +30,8 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/templates" element={<Templates />} />
-          <Route path="/createtemp" element={<CreateTemplate />} />
+          <Route path="/createtemp/:id" element={<CreateTemplate />} />
+          {/* <Route path="/create-template/:id" element={<CreateTemplate />} /> */}
           <Route path="/profile" element={<UserProfile />} />
         </Route>
       </Routes>

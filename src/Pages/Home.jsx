@@ -1,11 +1,12 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
+import Navbar from "../Components/Navbar"
+import RecentTemp from "../Components/RecentTemp"
+
 
 function Home() {
   return (
     <div>
-      <Navbar/>
-      {/* <h1>11</h1> */}
+      <Navbar></Navbar>
+      <RecentTemp></RecentTemp>
     </div>
   )
 }

@@ -1,13 +1,16 @@
-import React from 'react'
-import Navbar from '../Components/Navbar'
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import TempHeader from "../Components/TempHeader";
 
-function CreateTemplate() {
+const CreateTemplate = () => {
+  
+
   return (
     <div>
-      <Navbar></Navbar>
-      create
+      <TempHeader></TempHeader>
+     
     </div>
-  )
-}
+  );
+};
 
-export default CreateTemplate
+export default CreateTemplate;

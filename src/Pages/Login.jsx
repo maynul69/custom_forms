@@ -10,7 +10,7 @@ const LogIn = () => {
     try {
       const response = await axios.post('http://localhost:5000/api/auth', { email, password });
       console.log(response);
-      const { token, user } = response.data;
+      const { token } = response.data;
   
       // Storing the token in localStorage
       localStorage.setItem('token', token);

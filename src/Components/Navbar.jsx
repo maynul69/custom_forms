@@ -5,7 +5,7 @@ const navigation = [
   { name: 'Dashboard', href: '/admin', current: true },
   { name: 'Home', href: '/', current: false },
   { name: 'Templates', href: '/templates', current: false },
-]
+]  
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -17,12 +17,12 @@ export default function Navbar() {
     window.location.href = "/login"; // Redirect to login page
   };
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-emerald-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-emerald-400 hover:bg-emerald-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -38,7 +38,7 @@ export default function Navbar() {
                     href={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      item.current ? 'bg-emerald-950 text-white' : 'text-emerald-300 hover:bg-emerald-950 hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
@@ -53,7 +53,7 @@ export default function Navbar() {
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
-                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                <MenuButton className="relative flex rounded-full bg-emerald-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-800 focus:outline-hidden">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">Open user menu</span>
                   <img
@@ -70,7 +70,7 @@ export default function Navbar() {
                 <MenuItem>
                   <a
                     href="/profile"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+                    className="block px-4 py-2 text-sm text-emerald-700 data-focus:bg-emerald-100 data-focus:outline-hidden"
                   >
                     Your Profile
                   </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
                 <MenuItem>
                 <button
                     onClick={onLogout}
-                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
+                    className="block w-full text-left px-4 py-2 text-sm text-emerald-700 data-focus:bg-emerald-100 data-focus:outline-hidden"
                   >
                     Log out
                   </button>
@@ -99,7 +99,7 @@ export default function Navbar() {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                item.current ? 'bg-emerald-900 text-white' : 'text-emerald-300 hover:bg-emerald-700 hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium',
               )}
             >
