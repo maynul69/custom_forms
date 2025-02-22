@@ -8,6 +8,9 @@ import Templates from "./Pages/Templates";
 import CreateTemplate from "./Pages/CreateTemplate";
 
 import './App.css';
+import SingleForm from "./Pages/SingleForm";
+import EditQuestion from "./Pages/EditQuestion";
+import Response from "./Pages/Response";
 
 
 // Private Route Component
@@ -31,6 +34,9 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/templates" element={<Templates />} />
           <Route path="/createtemp/:id" element={<CreateTemplate />} />
+          <Route path="/form/:id" element={<SingleForm/>} />
+          <Route path="/edit-question/:id" element={<EditQuestion />} />
+          <Route path="/response/:id" element={<Response/>} />
           {/* <Route path="/create-template/:id" element={<CreateTemplate />} /> */}
           <Route path="/profile" element={<UserProfile />} />
         </Route>
