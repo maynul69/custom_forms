@@ -19,7 +19,7 @@ const Reg = () => {
     setSuccessMessage('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users', formData);
+      const response = await axios.post('https://custom-forms-server-g2hb.vercel.app/api/users', formData);
       console.log(response);
      
       setSuccessMessage('Registration successful! You can now log in.');

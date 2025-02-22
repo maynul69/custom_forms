@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 function RecentTemp() {
   const [qsts, setQsts] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/api/questions")
+    fetch("https://custom-forms-server-g2hb.vercel.app/api/questions")
       .then((res) => res.json())
       .then((data) => {
         const sortedData = data.sort(

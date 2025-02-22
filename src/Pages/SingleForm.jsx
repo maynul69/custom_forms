@@ -15,7 +15,7 @@ function SingleForm() {
   useEffect(() => {
     const fetchQst = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/questions/${id}`);
+        const response = await axios.get(`https://custom-forms-server-g2hb.vercel.app/api/questions/${id}`);
         setQst(response.data);
 
         // Initialize responses state with empty values
@@ -62,7 +62,7 @@ function SingleForm() {
 
         console.log(responses);
         
-      const response = await axios.post("http://localhost:5000/api/submit", {
+      const response = await axios.post("https://custom-forms-server-g2hb.vercel.app/api/submit", {
         formId: qst._id,
         responses,
       });

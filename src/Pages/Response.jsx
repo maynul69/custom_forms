@@ -13,7 +13,7 @@ function Response() {
     useEffect(() => {
         const fetchSubmission = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/submissions/${id}`);
+                const response = await axios.get(`https://custom-forms-server-g2hb.vercel.app/api/submissions/${id}`);
                 setSubmission(response.data);
             } catch (err) {
                 setError("Failed to fetch submission.");

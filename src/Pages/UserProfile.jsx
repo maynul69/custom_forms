@@ -13,7 +13,7 @@ function UserProfile() {
 
   // Fetch forms created by the user
   useEffect(() => {
-    fetch("http://localhost:5000/api/questions/email", {
+    fetch("https://custom-forms-server-g2hb.vercel.app/api/questions/email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,7 +37,7 @@ function UserProfile() {
 
   // Fetch all form responses
   useEffect(() => {
-    fetch("http://localhost:5000/api/all-form")
+    fetch("https://custom-forms-server-g2hb.vercel.app/api/all-form")
       .then((res) => res.json())
       .then((data) => {
         if (data.res) {

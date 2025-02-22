@@ -8,7 +8,7 @@ const LogIn = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth', { email, password });
+      const response = await axios.post('https://custom-forms-server-g2hb.vercel.app/api/auth', { email, password });
       console.log(response);
       const { token } = response.data;
   

@@ -14,7 +14,7 @@ function EditQuestion() {
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/questions/${id}`);
+        const response = await fetch(`https://custom-forms-server-g2hb.vercel.app/api/questions/${id}`);
         const data = await response.json();
         setForm(data);
         setLoading(false);
@@ -38,7 +38,7 @@ function EditQuestion() {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/questions/${id}`, {
+      const response = await fetch(`https://custom-forms-server-g2hb.vercel.app/api/questions/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -60,7 +60,7 @@ function EditQuestion() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/questions/${id}`, {
+      const response = await fetch(`https://custom-forms-server-g2hb.vercel.app/api/questions/${id}`, {
         method: "DELETE",
       });
 
