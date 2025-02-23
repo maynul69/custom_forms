@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
-import CenterTab from "../Components/centerTab";
+
 
 function SingleForm() {
   const { id } = useParams(); // Extracting 'id' from the URL
@@ -80,7 +80,7 @@ function SingleForm() {
   return (
     <div>
       <Navbar />
-      <CenterTab></CenterTab>
+      
       <form onSubmit={handleSubmit}>
         <div className="h-full pb-8 bg-gray-200">
           <div className="section m-auto w-1/2">
@@ -100,7 +100,7 @@ function SingleForm() {
                   {q.questionType === "text" && (
                     <input
                       type="text"
-                      className="w-full px-3 py-2 border rounded mt-2"
+                      className="w-full px-3 py-2 border-emerald-600 rounded mt-2"
                       placeholder="Your answer"
                       value={responses[q.id] || ""}
                       onChange={(e) => handleChange(q.id, e.target.value)}
@@ -110,7 +110,7 @@ function SingleForm() {
                   {q.questionType === "number" && (
                     <input
                       type="number"
-                      className="w-full px-3 py-2 border rounded mt-2"
+                      className="w-full px-3 py-2 border-emerald-600 rounded mt-2"
                       placeholder="Enter a number"
                       value={responses[q.id] || ""}
                       onChange={(e) => handleChange(q.id, e.target.value)}
@@ -119,7 +119,7 @@ function SingleForm() {
 
                   {q.questionType === "paragraph" && (
                     <textarea
-                      className="w-full px-3 py-2 border rounded mt-2"
+                      className="w-full px-3 py-2 border-emerald-600 rounded mt-2"
                       placeholder="Type your response here..."
                       value={responses[q.id] || ""}
                       onChange={(e) => handleChange(q.id, e.target.value)}
@@ -151,7 +151,7 @@ function SingleForm() {
             )}
 
             {/* Submit Button */}
-            <button type="submit" className="mt-4 bg-green-500 text-white px-4 py-2 rounded">
+            <button type="submit" className="mt-4 bg-emerald-500  text-white px-4 py-2 rounded">
               Submit
             </button>
           </div>

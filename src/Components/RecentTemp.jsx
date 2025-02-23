@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import doc_img from "../../img/Screenshot 2025-02-17 013742.png"
+import doc_img from "../../img/image.png"
 import { IoMdMore } from "react-icons/io";
 import { MdOutlineUnfoldMore } from "react-icons/md";
+import Navbar from "../Components/Navbar"
 import { Link } from 'react-router';
 function RecentTemp() {
   const [qsts, setQsts] = useState([]);
@@ -20,6 +21,8 @@ function RecentTemp() {
 
    
   return (
+    <div>
+      <Navbar></Navbar>
     <div className="m-4">
       <div className="top flex m-3.5 flex-row justify-between items-center">
         <div className="top_left text-base font-medium">
@@ -38,7 +41,7 @@ function RecentTemp() {
         <Link to={`/form/${qst._id}`} key={index}>
         <div 
      
-    className="doc_card flex flex-col box-border mr-5 hover:border-[#6e2594]"
+    className="doc_card flex flex-col box-border mr-5 hover:border-[#259469]"
   >
     <img 
       src={doc_img} 
@@ -57,6 +60,7 @@ function RecentTemp() {
 
       </div>
       </div>
+    </div>
     </div>
   )
 }

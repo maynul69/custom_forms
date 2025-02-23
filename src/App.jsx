@@ -11,6 +11,7 @@ import './App.css';
 import SingleForm from "./Pages/SingleForm";
 import EditQuestion from "./Pages/EditQuestion";
 import Response from "./Pages/Response";
+import RecentTemp from "./Components/RecentTemp";
 
 
 // Private Route Component
@@ -33,6 +34,7 @@ function App() {
         <Route element={<PrivateRoute />}>
           <Route path="/admin" element={<Admin />} />
           <Route path="/templates" element={<Templates />} />
+          <Route path="/recentTemp" element={<RecentTemp />} />
           <Route path="/createtemp/:id" element={<CreateTemplate />} />
           <Route path="/form/:id" element={<SingleForm/>} />
           <Route path="/edit-question/:id" element={<EditQuestion />} />

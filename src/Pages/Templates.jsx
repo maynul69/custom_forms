@@ -1,9 +1,11 @@
 import React from 'react'
 import blank from '../../img/Screenshot 2025-02-16 183806.png'
+import doc_img from "../../img/image.png"
 import { IoMdMore } from "react-icons/io";
 import { MdOutlineUnfoldMore } from "react-icons/md";
 import uuid from "react-uuid"
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import Navbar from '../Components/Navbar';
 
 function Templates() {
   const navigate= useNavigate()
@@ -13,7 +15,9 @@ function Templates() {
     
   }
   return (
-    <div className='temp_sec bg-gray-100 py-10 '>
+    <div>
+      <Navbar/>
+      <div className='temp_sec bg-gray-100 py-10 '>
       <div className="temp_top mx-[180px] flex flex-row items-center justify-between">
         
         <div className="temp_left">
@@ -34,18 +38,21 @@ function Templates() {
       </div>
       <div className="temp_body mx-[160px] flex flex-row items-center justify-between">
         <div className="card mt-[15px] ml-[20px]" onClick={createForm}>
-          <img src={blank} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#6e2594]'/>
+          <img src={blank} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#259469]'/>
           <p className="card_title text-sm mt-2 font-medium">Blank Template</p>
         </div>
+        <Link to={`/recentTemp`}>
         <div className="card mt-[15px] ml-[20px]">
-          <img src={blank} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#6e2594]'/>
-          <p className="card_title text-sm mt-2 font-medium">Blank Template</p>
+          <img src={doc_img} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#259469]'/>
+          <p className="card_title text-sm mt-2 font-medium">Recent Templates</p>
         </div>
+        </Link>
         <div className="card mt-[15px] ml-[20px]">
-          <img src={blank} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#6e2594]'/>
+          <img src={blank} alt=""  className='box-border h-[120px] w-[171px] rounded-[2px] border-[0.5px] border-[#fffdf7] cursor-pointer hover:border-[1px] hover:border-[#259469]'/>
           <p className="card_title text-sm mt-2 font-medium">Blank Template</p>
         </div>
       </div>
+    </div>
     </div>
   )
 }

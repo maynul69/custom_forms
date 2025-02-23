@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 function EditQuestion() {
   const { id } = useParams();
@@ -78,7 +79,9 @@ function EditQuestion() {
   if (loading) return <div className="text-center text-gray-500">Loading...</div>;
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div>
+        <Navbar/>
+        <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="max-w-3xl w-full bg-white p-6 rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-4 text-gray-800">Edit Question</h1>
 
@@ -130,17 +133,18 @@ function EditQuestion() {
 
         {/* Buttons */}
         <div className="flex items-center gap-4 mt-4">
-          <button onClick={handleUpdate} className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition">
+          <button onClick={handleUpdate} className="bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-gray-300 hover:text-emerald-600 transition">
             Update
           </button>
           <button onClick={handleDelete} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">
             Delete
           </button>
-          <Link to="/profile" className="text-blue-500 hover:underline">
+          <Link to="/profile" className="text-emerald-500 hover:underline">
             Back to Profile
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

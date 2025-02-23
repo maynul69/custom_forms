@@ -231,7 +231,7 @@ function QstForm() {
                             {ques.options.length < MAX_OPTIONS && (
                               <button
                                 onClick={() => addOption(i)}
-                                className="text-blue-500"
+                                className="bg-emerald-950 "
                               >
                                 Add Option
                               </button>
@@ -261,14 +261,14 @@ function QstForm() {
         {questions.length < MAX_QUESTIONS && (
           <button
             onClick={addQuestion}
-            className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
+            className="mt-4 bg-emerald-950 text-white px-4 py-2 rounded"
           >
             Add Question
           </button>
         )}
         <button
           onClick={handleSubmit}
-          className="mt-4 bg-green-500 text-white px-4 py-2 rounded ml-4"
+          className="mt-4 bg-emerald-500  text-white px-4 py-2 rounded ml-4"
         >
           Send
         </button>

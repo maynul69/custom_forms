@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../Components/Navbar";
-import CenterTab from "../Components/centerTab";
 
 function Response() {
     const { id } = useParams();
